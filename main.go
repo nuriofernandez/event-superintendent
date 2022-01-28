@@ -1,15 +1,18 @@
 package main
 
 import (
+	_ "github.com/joho/godotenv/autoload" // Automatically loads godotenv .env file contents. 💖
+
 	"fmt"
 	"net"
+	"os"
 )
 
 func main() {
-	fmt.Println("Start server...")
+	fmt.Println("Starting server...")
 
-	// Listen on port 8000. 🦻
-	ln, _ := net.Listen("tcp", ":8000")
+	// Listen on port {PORT} env variable port. 🦻
+	ln, _ := net.Listen("tcp", fmt.Sprintf(":%s", os.Getenv("PORT")))
 	fmt.Printf("Listening connections at %s!\n", ln.Addr().String())
 
 	for {

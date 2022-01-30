@@ -10,6 +10,9 @@ Everything here is easy, stop worring about over-complicated systems and focus o
 
 TODO
 
+![Event execution flow](https://i.imgur.com/DV2JfKn.png)
+
+
 ## Is it secure?
 
 TODO

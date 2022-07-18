@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/xXNurioXx/event-superintendent/v2/broadcaster"
 	"github.com/xXNurioXx/event-superintendent/v2/connections"
 
 	"fmt"
@@ -28,5 +29,8 @@ func handleConnection(conn net.Conn) {
 		// Log the received message. 🔊
 		logMsg := string(message[:len(message)-2]) // Remove \n from the string
 		fmt.Printf("<%s> : %s\n", ip, logMsg)
+
+		// Echo the message through all connections
+		go broadcaster.Broadcast(connection, "uknown:uknown@uknown", logMsg)
 	}
 }

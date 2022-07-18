@@ -20,6 +20,6 @@ func main() {
 		conn, _ := ln.Accept()
 
 		// Handle the connection async. 🛤
-		go handleConection(conn)
+		go handleConnection(conn)
 	}
 }

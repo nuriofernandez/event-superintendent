@@ -6,7 +6,7 @@ import (
 	"net"
 )
 
-func handleConection(conn net.Conn) {
+func handleConnection(conn net.Conn) {
 	// Notify new connections. 🔊
 	ip := conn.RemoteAddr().String()
 	fmt.Printf("<%s> Has been connected!\n", ip)
